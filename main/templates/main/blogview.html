@@ -13,9 +13,9 @@
         <div class="row">
 
             <!-- Post Content Column -->
-            <div class="col-lg-8">
+            <div class="col-lg-8 shadow p-3 mb-5 bg-white rounded">
 
-            {% for x in post %}
+                {% for x in post %}
             
            
 
@@ -23,10 +23,7 @@
                         <h1 class="mt-4">{{ x.title }}</h1>
 
                         <!-- Author -->
-                        <p class="lead">
-                            by
-                            <a href="#">Rejoan Islam</a>
-                        </p>
+                        <p class="lead"> Posted by <a href="{% url 'index' %}">REJOAN ISLAM</a> </p>
 
                         <hr>
 
@@ -37,7 +34,10 @@
 
                         <!-- Preview Image -->
                          {% if x.image %}
-                           <img class="card-img-top img-fluid" src={{ x.image.url }} alt="Image"> 
+                        
+                         <img class="card-img-top img-fluid" src={{ x.image.url }}> 
+                         
+                           
                         {% endif %}
 
                         <hr>
@@ -58,20 +58,32 @@
 
                         <hr>
 
-            {% endfor %}
+                {% endfor %}
 
                 <!-- Comments Form -->
                 <div class="card my-4">
-                    <h5 class="card-header">Leave a Comment:</h5>
+                    <h5 class="card-header text-center">Leave a Comment:</h5>
                     <div class="card-body">
                         <form>
-                            <div class="form-group">
-                                <textarea class="form-control" rows="3"></textarea>
+                            <div class="input-group input-group-sm mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Name &#8677;</span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm"> Email &#8677;</span>
+                                </div>
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                           
+                    
+                                                   
+                            <textarea class="form-control" rows="3" placeholder="What's on your mind"></textarea>
+                            <input type="submit" class="btn btn-primary btn-sm my-3">
                         </form>
                     </div>
                 </div>
+
 
                 <!-- Single Comment -->
                 <div class="media mb-4">
@@ -123,13 +135,12 @@
 
                 <!-- Search Widget -->
                 <div class="card my-4">
-                    <h5 class="card-header">Search</h5>
-                    <div class="card-body">
+                    <div>
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Search for...">
                             <span class="input-group-append">
-                <button class="btn btn-secondary" type="button">Go!</button>
-              </span>
+                            <button class="btn btn-secondary" type="submit">Go!</button>
+                            </span>
                         </div>
                     </div>
                 </div>
