@@ -1,9 +1,4 @@
 .idea
 .vscode
-.git
-.venv
-idea
-vscode
-git
-allstaticfiles
 venv
+allstaticfiles
