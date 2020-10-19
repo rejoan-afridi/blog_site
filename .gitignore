@@ -4,3 +4,4 @@ venv
 allstaticfiles
 #venv
 .venv
+env.py
