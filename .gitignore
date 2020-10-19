@@ -5,4 +5,5 @@ allstaticfiles
 #venv
 .venv
 env.py
+env
 __pycache__
