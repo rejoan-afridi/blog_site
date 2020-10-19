@@ -6,9 +6,11 @@ from main.models import Category
 
 
 def index(request):
-    all_category = Post.objects.all()
+    all_post = Post.objects.all()
+    categories = Category.objects.all()
     context = {
-        "blog": all_category
+        "blog": all_post,
+        "category": categories
     }
     return render(request, 'main/index.html', context)
 
@@ -30,8 +32,10 @@ def details(request):
 
 def post(request, slug_text):
     querry = Post.objects.filter(slug=slug_text)
+    categories = Category.objects.all()
     context = {
         'post': querry,
+        'category':categories
       
         
     }
