@@ -2,3 +2,5 @@
 .vscode
 venv
 allstaticfiles
+#venv
+.venv
