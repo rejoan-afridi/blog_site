@@ -23,7 +23,7 @@ STATUS_CHOICES = (
 class Post(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, null=True, blank=True)
-    image = models.ImageField(upload_to='main/img')
+    image = models.ImageField(upload_to='')
     blog_type = models.ForeignKey(Category, on_delete=models.CASCADE)
     text = models.TextField()
     text2 = RichTextField(null=True, blank=True)
@@ -37,7 +37,7 @@ class Post(models.Model):
         ordering = ('published_at',)
 
     class Gallery(models.Model):
-        img_url = models.ImageField(upload_to='main/img')
+        img_url = models.ImageField(upload_to='')
 
     def __str__(self):
         return self.title
