@@ -44,8 +44,8 @@
                             <a href="/post2/{{cate.slug}}" class="btn btn-primary">Read more &rarr;</a>
                         </div>
                         <div class="card-footer text-muted">
-                            Posted on January 1, 2020 by
-                            <a href="#">Start Bootstrap</a>
+                           Posted on {{ cate.published_at }} |
+                            by <a href="{% url 'index' %}">REJOAN ISLAM</a>
                         </div>
                     </div>
 
@@ -124,12 +124,6 @@
         <!-- /.container -->
 
         <!-- Footer -->
-        <footer class="py-5 bg-dark">
-            <div class="container">
-                <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
-            </div>
-            <!-- /.container -->
-        </footer>
-
+        {% include 'main/partials/footer.html' %}
 
 {% endblock %}
