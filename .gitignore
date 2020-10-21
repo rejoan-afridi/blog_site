@@ -3,6 +3,7 @@
 venv
 allstaticfiles
 
-env.py
-env
 __pycache__
+media
+env.py
+venv

@@ -23,25 +23,21 @@ STATUS_CHOICES = (
 class Post(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, null=True, blank=True)
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(upload_to='main/img')
     blog_type = models.ForeignKey(Category, on_delete=models.CASCADE)
     text = models.TextField()
     text2 = RichTextField(null=True, blank=True)
     published_at = models.DateField(auto_now_add=True)
     updated = models.DateField(auto_now_add=True)
+    views = models.IntegerField(default=0)
     status = models.CharField(
         max_length=10, choices=STATUS_CHOICES, default='draft')
 
     class Meta:
         ordering = ('published_at',)
 
-    @property
-    def imageURL(self):
-        try:
-            url = self.image.url
-        except:
-            url = ''
-        return url
+    class Gallery(models.Model):
+        img_url = models.ImageField(upload_to='main/img')
 
     def __str__(self):
         return self.title
